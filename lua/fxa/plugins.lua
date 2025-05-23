@@ -4,13 +4,16 @@ return {
   { "williamboman/mason.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
   { "neovim/nvim-lspconfig" },
-  { "hrsh7th/nvim-cmp" },    
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "hrsh7th/cmp-buffer" },
-  { "hrsh7th/cmp-path" },
-  { "L3MON4D3/LuaSnip" },   
+  { "hrsh7th/nvim-cmp",
+    dependencies = {
+      { "hrsh7th/cmp-nvim-lsp" },
+      { "hrsh7th/cmp-buffer" },
+      { "hrsh7th/cmp-path" },
+      { "L3MON4D3/LuaSnip" },   
+    },
+  },
   { "nvim-treesitter/nvim-treesitter" },
-  
+
 -- Navigation
   { "nvim-telescope/telescope.nvim" },
   { "nvim-lua/plenary.nvim" }, 
@@ -26,7 +29,7 @@ return {
   { "tadaa/vimade"},
   
 -- Utility
---  { "vim-airline/vim-airline"},
+  { "vim-airline/vim-airline"},
   { "tpope/vim-surround"},
   { "tpope/vim-fugitive"},
   { "voldikss/vim-floaterm"},
