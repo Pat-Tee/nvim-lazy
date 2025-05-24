@@ -4,15 +4,16 @@ local servers = {
   --  "rust_analyzer",
   --  "gopls",
   --  "vimls",
-  --  "bashls",
+  "bashls",
 }
 
 return {
-  "nvim/nvim-lspconfig",
+  "neovim/nvim-lspconfig",
   event = "BufReadPre",
   dependencies = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
+    "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
   },
 
@@ -50,7 +51,7 @@ return {
       end
     end
 
-    -- Autocomplete
+    -- Autocompletion
     vim.api.nvim_create_autocmd('LspAttach', {
       callback = function(args)
         local client = vim.lsp.get_client_by_id(args.data.client_id)
@@ -90,7 +91,7 @@ return {
           local autocmd = vim.api.nvim_create_autocmd
           local augroup = vim.api.nvim_create_augroup('lsp_highlight', { clear = false })
 
-          vim.api.nvim_clear_autocmds({ buffer = bufnr, group = augroup })
+          vim.api.nvim_clear_autocmds({ buffer = vim.g.bufnr, group = augroup })
 
           autocmd({ 'CursorHold' }, {
             group = augroup,

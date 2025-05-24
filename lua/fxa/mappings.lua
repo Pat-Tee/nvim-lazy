@@ -4,6 +4,7 @@ vim.keymap.set('', 'j', 'h', { noremap = true })
 vim.keymap.set('', 'k', 'j', { noremap = true })
 vim.keymap.set('', 'l', 'k', { noremap = true })
 vim.keymap.set('', ';', 'l', { noremap = true })
+vim.keymap.set('n', '<leader>q', ':q<CR>', {})
 
 --vim.keymap.set('n', '<leader>pv', vim.cmd.Ex) -- netrw
 vim.keymap.set('n', '<leader>pv', ':NvimTreeOpen<CR>') -- Nvim-tree
@@ -35,3 +36,6 @@ vim.keymap.set('v', '<M-?>', ':s/\\/\\// <CR> 0xx', { silent = true })
 
 -- LSP related
 vim.keymap.set('n', '<leader>qf', vim.diagnostic.open_float, {})
+
+-- File Navigation
+vim.keymap.set('n', '<leader>cf', ':cd $HOME/.config/nvim<CR>', {})
